@@ -1,0 +1,16 @@
+Let there be an NxN space in which the dungeon will be generated.
+Let a room be an IxJ rectangle which is defined by a major axis and minor axis (I and J axes), as well as a center.
+The space will be populated some K number of rooms. These rooms will then be placed in the space with a random center.
+[OPTIONAL: When placing rooms, we may choose to check that there are no collisions. 
+	We can do this via a 2-dimensional array. 
+	In the array, each room will be placed at its center, and each axis drawn with some character used for each unit of length along both axes. 
+	If a room's axis overlaps with another room's axis, then we remove the characters denoting that room and generate a new placement for it.]
+Once rooms have been placed, they must be connected via corridors.
+For each room, we will connect to the closest M neighbors.
+These neighbors will be determined via a series of concentric circles expanding outward from the room.
+{UPDATE: Nevermind that, it's easier to just calculate the distance between this room and all the other rooms.
+	Since we have a list of rooms, we may as well use it.}
+Once connected, a path will be drawn between the rooms as the crow flies.
+
+Let it be known that that I, J, K, and M shall be randomly generated integers.
+N will be a constant defined by the developer.
