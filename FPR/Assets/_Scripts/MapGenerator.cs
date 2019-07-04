@@ -243,7 +243,7 @@ public class MapGenerator : MonoBehaviour
         }
 
         System.IO.File.WriteAllText(@"C:\Users\Josh\Desktop\Debug.txt", str);
-
+        Singleton.currentLevel = currentMap;
     }
 
     private bool dotCheck(char[] v)
@@ -613,6 +613,8 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }
+
+        Singleton.Roomlist = roomList;
 
         return workingMap;
     }

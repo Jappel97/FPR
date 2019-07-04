@@ -12,6 +12,8 @@ TagManager:
   - HallTile
   - HallCornerTile
   - CenterTile
+  - Enemy
+  - player
   layers:
   - Default
   - TransparentFX
@@ -22,8 +24,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - Player
+  - Ally
   - 
   - 
   - 

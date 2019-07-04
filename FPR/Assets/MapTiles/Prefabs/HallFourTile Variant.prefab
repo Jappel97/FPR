@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1928448616596068546}
   - component: {fileID: 1018999379477149531}
+  - component: {fileID: 6571366089647221549}
   m_Layer: 0
   m_Name: Wall 3
   m_TagString: Wall
@@ -42,8 +43,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.251379, y: 2.644815, z: 0.23966068}
-  m_Center: {x: -0.14187753, y: -0.17068839, z: 0.13189557}
+  m_Size: {x: 0.11933428, y: 2.644815, z: 0.12228757}
+  m_Center: {x: -0.10519841, y: -0.17068839, z: 0.11722395}
+--- !u!54 &6571366089647221549
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762368962622412352}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2921885212391112669
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8309231732674121245}
   - component: {fileID: 6265605374654626405}
+  - component: {fileID: 8941978804736542550}
   m_Layer: 0
   m_Name: Wall 2
   m_TagString: Wall
@@ -130,8 +148,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.251379, y: 2.644815, z: 0.23966068}
-  m_Center: {x: -0.106720924, y: -0.17068839, z: 0.13189557}
+  m_Size: {x: 0.11933416, y: 2.644815, z: 0.10761595}
+  m_Center: {x: -0.114056736, y: -0.17068839, z: 0.12455976}
+--- !u!54 &8941978804736542550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629700760324329854}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4720971120233751756
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7389130021863931363}
   - component: {fileID: 7721891405764214207}
+  - component: {fileID: 9133314386487163366}
   m_Layer: 0
   m_Name: Wall 1
   m_TagString: Wall
@@ -174,8 +209,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.23966014, y: 2.644815, z: 0.23966068}
-  m_Center: {x: -0.10086149, y: -0.17068839, z: 0.13189557}
+  m_Size: {x: 0.078272104, y: 2.644815, z: 0.15163088}
+  m_Center: {x: -0.10819733, y: -0.17068839, z: 0.11722392}
+--- !u!54 &9133314386487163366
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4720971120233751756}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5016440755363331775
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5195095469423597985}
   - component: {fileID: 1648307991438231754}
+  - component: {fileID: 7533573506015008000}
   m_Layer: 0
   m_Name: Wall 4
   m_TagString: Wall
@@ -262,8 +314,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25087434, y: 2.644815, z: 0.23966068}
-  m_Center: {x: -0.1401113, y: -0.17068839, z: 0.13189557}
+  m_Size: {x: 0.1481728, y: 2.644815, z: 0.1369592}
+  m_Center: {x: -0.11810383, y: -0.17068839, z: 0.10988814}
+--- !u!54 &7533573506015008000
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7998552495284080476}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &521342988072123941
 PrefabInstance:
   m_ObjectHideFlags: 0
