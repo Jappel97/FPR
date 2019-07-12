@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class PlayerMovement : NetworkBehaviour
+public class PlayerMovement : MoveCore
 {
 
     private Vector3 startPos;
     private Vector3 destination;
-    private bool moving;
     private bool safe2Move;
     private float startTime;
     private float ETA;
@@ -20,11 +19,10 @@ public class PlayerMovement : NetworkBehaviour
 
     private CharacterController charcon;
 
-    private PlayerAnimation pAnim;
+
 
     private void Awake()
     {
-        pAnim = GetComponent<PlayerAnimation>();
         charcon = GetComponent<CharacterController>();
         mySensor = sensorBlock.GetComponent<MovementSensor>();
     }
@@ -40,15 +38,15 @@ public class PlayerMovement : NetworkBehaviour
 
     private void LateUpdate()
     {
-        
     }
 
-    public void StartMove()
+    //takes an angle in degrees.
+    public override void StartMove(float angle)
     {
         if (!moving)
         {
             startPos = this.transform.position;
-            destination = GetDestination();
+            destination = GetDestination(90 - angle);
             moving = true;
             safe2Move = !mySensor.intersection;
             startTime = Time.time;
@@ -57,7 +55,7 @@ public class PlayerMovement : NetworkBehaviour
         }
     }
 
-    public bool DoMove()
+    public override bool DoMove()
     {
         if (moving)
         {
@@ -70,7 +68,6 @@ public class PlayerMovement : NetworkBehaviour
                 moving = false;
             }
         }
-        HandleAnimations();
 
         return moving;
     }
@@ -89,13 +86,13 @@ public class PlayerMovement : NetworkBehaviour
         }
     }
 
-    private Vector3 GetDestination()
+    //Takes an angle in degrees and calculates a destination based on the current heading.
+    private Vector3 GetDestination(float angle)
     {
         Vector3 myPos = this.transform.position;
         Vector3 desPos;
         int xAdd = 0;
         int zAdd = 0;
-        double angle = 90 - (this.transform.rotation.eulerAngles.y);
         angle = angle * Mathf.Deg2Rad;
 
         //We are going to work in 8 directional movement, with each direction having an equal size movement area
@@ -113,10 +110,5 @@ public class PlayerMovement : NetworkBehaviour
 
         desPos = myPos + new Vector3(xAdd, 0, zAdd);
         return desPos;
-    }
-
-    void HandleAnimations()
-    {
-        pAnim.Movement(moving);
     }
 }

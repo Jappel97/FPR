@@ -14,6 +14,8 @@ TagManager:
   - CenterTile
   - Enemy
   - player
+  - Sensor
+  - Treasure
   layers:
   - Default
   - TransparentFX

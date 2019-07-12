@@ -29,21 +29,19 @@ public class MapGenerator : MonoBehaviour
     public GameObject roomCenter, roomWall, roomCorner;
     public GameObject hall, hallCorner;
     public GameObject hallThree, hallFour;
+    public GameObject Spawnpoint;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Starting generation");
+        this.gameObject.GetComponent<MapGenerator>().DrawMap();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Starting generation");
-            DrawMap();
-        }
+        
     }
 
     public void DrawMap()
@@ -64,16 +62,16 @@ public class MapGenerator : MonoBehaviour
                 switch (currentMap.map[i,j])
                 {
                     case '.':
-                        TileList.Add(Instantiate(roomCenter, positionMarker.transform.position, positionMarker.transform.rotation));
+                        TileList.Add(Instantiate(roomCenter, positionMarker.transform.position, Quaternion.identity));
                         break;
                     case '|':
-                        TileList.Add(Instantiate(roomWall, positionMarker.transform.position, positionMarker.transform.rotation));
+                        TileList.Add(Instantiate(roomWall, positionMarker.transform.position, Quaternion.identity));
                         break;
                     case '=':
-                        TileList.Add(Instantiate(roomCorner, positionMarker.transform.position, positionMarker.transform.rotation));
+                        TileList.Add(Instantiate(roomCorner, positionMarker.transform.position, Quaternion.identity));
                         break;
                     case '#':
-                        TileList.Add(Instantiate(hall, positionMarker.transform.position, positionMarker.transform.rotation));
+                        TileList.Add(Instantiate(hall, positionMarker.transform.position, Quaternion.identity));
                         break;
                     case ' ':
                         break;
@@ -242,8 +240,27 @@ public class MapGenerator : MonoBehaviour
             str = str + "\n";
         }
 
+        SetSpawns();
+
         System.IO.File.WriteAllText(@"C:\Users\Josh\Desktop\Debug.txt", str);
         Singleton.currentLevel = currentMap;
+    }
+
+    private void SetSpawns()
+    {
+        Room myRoom = Singleton.Roomlist[0];
+        int myX = 2* myRoom.centerX;
+        int myY = 2* myRoom.centerY;
+        for(int i = -1; i < 2; i++)
+        {
+            for(int j = -1; j < 2; j++)
+            {
+                if (i != 0 && j != 0)
+                {
+                    GameObject.Instantiate(Spawnpoint, new Vector3(myX + 2 * j, 0, myY + 2 * i), Quaternion.identity);
+                }
+            }
+        }
     }
 
     private bool dotCheck(char[] v)
